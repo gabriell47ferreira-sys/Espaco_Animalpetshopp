@@ -28,9 +28,14 @@ export const metadata: Metadata = {
   description:
     "Pet shop em Caruaru com produtos de qualidade para cães, gatos e outros animais. Rações, acessórios e produtos de higiene no bairro Kennedy. Nota 4,9 no Google com mais de 300 avaliações.",
   icons: {
-    icon: "/favicon.png",
-    apple: "/logo.png",
-    shortcut: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   keywords: [
     "pet shop em Caruaru",
