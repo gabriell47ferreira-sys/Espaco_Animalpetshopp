@@ -8,11 +8,11 @@ import Button from "@/components/ui/Button";
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const floatAnimation: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 14 },
   visible: (delay: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay, ease: EASE },
+    transition: { duration: 0.5, delay, ease: EASE },
   }),
 };
 
@@ -20,101 +20,95 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-between overflow-hidden"
+      className="relative w-full bg-gradient-to-b from-[#FDD615] via-[#FCDF15] to-[#FDB900] overflow-hidden pt-16 sm:pt-20 md:pt-0"
       aria-label="Hero — Espaço Animal Pet Shop"
     >
-      {/* ── Vídeo animado de fundo (sem foto estática e sem filtro fumê laranja) ── */}
-      <div className="absolute inset-0 -z-10">
-        <video
-          src="/hero-dog.mp4"
-          poster="/hero-dog-poster.jpg"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
-
-      {/* ── Topo do Hero: Informações ao redor do Dog ── */}
-      <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-3 sm:gap-4">
+      {/* ── Banner Responsivo: Mantém proporção perfeita no mobile e expande no desktop ── */}
+      <div className="relative w-full aspect-[16/9] sm:aspect-[16/9] md:aspect-auto md:min-h-[580px] lg:min-h-[660px] xl:min-h-[740px] flex items-center">
         
-        {/* Badge de localização flutuante */}
-        <motion.div
-          className="inline-flex items-center gap-2 bg-black/45 hover:bg-black/60 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 shadow-lg transition-colors"
-          variants={floatAnimation}
-          custom={0.1}
-          initial="hidden"
-          animate="visible"
-        >
-          <span className="w-2.5 h-2.5 rounded-full bg-[#ea580c] animate-pulse" />
-          <MapPin size={15} className="text-[#fb923c]" />
-          <span className="text-white text-xs sm:text-sm font-medium tracking-wide">
-            {business.neighborhood}, {business.city} — {business.state}
-          </span>
-        </motion.div>
+        {/* Vídeo do banner sem cortes */}
+        <div className="absolute inset-0 w-full h-full -z-0">
+          <video
+            src="/hero-dog.mp4"
+            poster="/hero-dog-poster.jpg"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover object-[72%_center] sm:object-[70%_center] lg:object-center"
+          />
+        </div>
 
-        {/* Badge de reputação Google no topo direito */}
-        <motion.div
-          className="inline-flex items-center gap-2.5 bg-black/45 hover:bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-2 shadow-lg transition-colors"
-          variants={floatAnimation}
-          custom={0.2}
-          initial="hidden"
-          animate="visible"
-        >
-          <div className="flex items-center gap-0.5">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <Star
-                key={i}
-                size={14}
-                className="text-[#fbbf24] fill-[#fbbf24]"
-              />
-            ))}
+        {/* ── Conteúdo posicionado com precisão na ÁREA AMARELA (lado esquerdo) ── */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-12 h-full flex items-center pointer-events-none">
+          <div className="w-[54%] sm:w-[50%] md:w-[48%] lg:w-[42%] max-w-md flex flex-col justify-center gap-2 sm:gap-3 md:gap-4 pointer-events-auto">
+            
+            {/* Badges de Localização e Avaliação Google */}
+            <motion.div
+              className="flex flex-wrap items-center gap-1.5 sm:gap-2"
+              variants={floatAnimation}
+              custom={0.1}
+              initial="hidden"
+              animate="visible"
+            >
+              {/* Badge Bairro / Cidade */}
+              <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-black/60 hover:bg-black/75 backdrop-blur-md border border-white/25 rounded-full px-2 py-0.5 sm:px-3 sm:py-1 shadow-md transition-colors">
+                <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#ea580c] animate-pulse shrink-0" />
+                <MapPin size={11} className="text-[#fb923c] sm:w-3.5 sm:h-3.5 shrink-0" />
+                <span className="text-white text-[10px] sm:text-xs font-semibold tracking-tight sm:tracking-normal whitespace-nowrap">
+                  {business.neighborhood}, {business.city}
+                </span>
+              </div>
+
+              {/* Badge Google 4.9★ */}
+              <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-black/60 hover:bg-black/75 backdrop-blur-md border border-white/25 rounded-full px-2 py-0.5 sm:px-3 sm:py-1 shadow-md transition-colors">
+                <Star size={11} className="text-[#fbbf24] fill-[#fbbf24] sm:w-3 sm:h-3 shrink-0" />
+                <span className="text-white font-bold text-[10px] sm:text-xs">
+                  {business.rating}
+                </span>
+                <span className="text-white/85 text-[9px] sm:text-[11px] hidden xs:inline whitespace-nowrap">
+                  (150+ Google)
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Botões de Ação na Área Amarela */}
+            <motion.div
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-1.5 sm:gap-2.5 md:gap-3 w-full"
+              variants={floatAnimation}
+              custom={0.25}
+              initial="hidden"
+              animate="visible"
+            >
+              {/* Botão WhatsApp */}
+              <Button
+                href={business.whatsappUrl}
+                target="_blank"
+                size="sm"
+                variant="primary"
+                icon={<MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 shrink-0" />}
+                className="w-full sm:w-auto text-[11px] xs:text-xs sm:text-sm md:text-base py-1.5 xs:py-2 sm:py-3 px-2.5 sm:px-5 font-bold shadow-xl hover:scale-105 transition-transform"
+              >
+                Falar pelo WhatsApp
+              </Button>
+
+              {/* Botão Como chegar */}
+              <Button
+                href={business.googleMapsUrl}
+                target="_blank"
+                size="sm"
+                variant="secondary"
+                icon={<MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 shrink-0" />}
+                className="w-full sm:w-auto bg-[#431407] hover:bg-[#270902] text-white border-0 shadow-lg hover:scale-105 transition-transform text-[11px] xs:text-xs sm:text-sm md:text-base py-1.5 xs:py-2 sm:py-3 px-2.5 sm:px-5 font-bold"
+              >
+                Como chegar
+              </Button>
+            </motion.div>
+
           </div>
-          <div className="w-px h-4 bg-white/20" />
-          <span className="text-white font-bold text-xs sm:text-sm">
-            {business.rating}
-          </span>
-          <span className="text-white/80 text-xs">
-            ({business.reviewCountDisplay} no Google)
-          </span>
-        </motion.div>
-      </div>
+        </div>
 
-      {/* ── Centro: Espaço desobstruído para o Dog 3D animado ── */}
-      <div className="flex-1 min-h-[180px] sm:min-h-[260px]" />
-
-      {/* ── Base do Hero: Botões de Conversão no espaço inferior ── */}
-      <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-16">
-        <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto"
-          variants={floatAnimation}
-          custom={0.35}
-          initial="hidden"
-          animate="visible"
-        >
-          <Button
-            href={business.whatsappUrl}
-            target="_blank"
-            size="lg"
-            variant="primary"
-            icon={<MessageCircle size={20} />}
-            className="w-full sm:w-auto shadow-2xl hover:scale-105 transition-transform text-sm sm:text-base py-3 sm:py-3.5 px-6"
-          >
-            Falar pelo WhatsApp
-          </Button>
-
-          <Button
-            href={business.googleMapsUrl}
-            target="_blank"
-            size="lg"
-            variant="secondary"
-            icon={<MapPin size={20} />}
-            className="w-full sm:w-auto bg-black/55 hover:bg-black/75 text-white border border-white/25 backdrop-blur-md shadow-2xl hover:scale-105 transition-transform text-sm sm:text-base py-3 sm:py-3.5 px-6"
-          >
-            Como chegar
-          </Button>
-        </motion.div>
       </div>
     </section>
   );
