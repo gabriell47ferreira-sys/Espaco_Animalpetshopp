@@ -65,7 +65,7 @@ export default function SocialProof() {
         className="text-center mb-12 md:mb-16"
         variants={itemVariants}
       >
-        <span className="inline-block bg-white/10 text-[#fed7aa] text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-white/20">
+        <span className="inline-block bg-white/10 text-[#fde047] text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-[#fde047]/30 backdrop-blur-sm">
           Quem compra, recomenda
         </span>
 
@@ -85,7 +85,7 @@ export default function SocialProof() {
                 />
               ))}
             </div>
-            <p className="text-[#fed7aa] text-sm font-medium">no Google</p>
+            <p className="text-[#fde047] text-sm font-semibold tracking-wide">no Google</p>
           </div>
 
           {/* Divisor */}
@@ -94,17 +94,17 @@ export default function SocialProof() {
 
           {/* Quantidade de avaliações */}
           <div className="text-center">
-            <p className="font-display text-8xl sm:text-9xl font-bold text-[#fdba74] leading-none">
+            <p className="font-display text-8xl sm:text-9xl font-bold text-[#f97316] leading-none">
               {business.reviewCountDisplay}
             </p>
-            <p className="text-[#fed7aa] text-sm font-medium mt-3">
+            <p className="text-white/80 text-sm font-medium mt-3">
               avaliações de clientes
             </p>
           </div>
         </div>
 
         {/* Texto de suporte */}
-        <p className="text-white/70 text-lg max-w-lg mx-auto leading-relaxed mb-8">
+        <p className="text-white/80 text-lg max-w-lg mx-auto leading-relaxed mb-8">
           Mais de {business.reviewCountDisplay} clientes de Caruaru avaliaram a
           Espaço Animal no Google. Confiança que não é dita — é provada.
         </p>
@@ -113,10 +113,11 @@ export default function SocialProof() {
         <Button
           href={business.googleMapsUrl}
           target="_blank"
-          variant="outline"
+          variant="primary"
           size="lg"
           icon={<ExternalLink size={18} />}
           iconPosition="right"
+          className="bg-[#ea580c] hover:bg-[#f97316] text-white shadow-xl hover:scale-105 transition-transform"
         >
           Ver avaliações no Google
         </Button>
@@ -128,17 +129,17 @@ export default function SocialProof() {
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
-              className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6"
+              className="bg-white/[0.08] hover:bg-white/[0.13] backdrop-blur-md border border-white/15 rounded-2xl p-6 transition-all duration-300 shadow-xl"
               variants={itemVariants}
             >
-              <Quote size={20} className="text-[#fb923c] mb-3" />
-              <p className="text-white/90 text-sm leading-relaxed mb-4 italic">
+              <Quote size={22} className="text-[#f97316] mb-3" />
+              <p className="text-white/95 text-sm leading-relaxed mb-4 italic">
                 &ldquo;{t.text}&rdquo;
               </p>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-white font-semibold text-sm">{t.name}</p>
-                  <p className="text-white/50 text-xs">{t.date}</p>
+                  <p className="text-white font-bold text-sm">{t.name}</p>
+                  <p className="text-white/60 text-xs">{t.date}</p>
                 </div>
                 <Stars count={t.rating} />
               </div>

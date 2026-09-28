@@ -5,18 +5,24 @@
    ============================================================ */
 
 @theme inline {
-  /* Paleta Principal — Verde Natural */
-  --color-green-950: #431407;
-  --color-green-900: #7c2d12;
-  --color-green-800: #9a3412;
-  --color-green-700: #ea580c;
-  --color-green-600: #f97316;
-  --color-green-500: #fb923c;
-  --color-green-400: #fb923c;
-  --color-green-300: #fdba74;
-  --color-green-200: #fed7aa;
-  --color-green-100: #ffedd5;
-  --color-green-50:  #ffedd5;
+  /* Paleta Principal — Laranja Brand */
+  --color-orange-950: #0c1017;
+  --color-orange-900: #111827;
+  --color-orange-800: #c2410c;
+  --color-orange-700: #ea580c;
+  --color-orange-600: #f97316;
+  --color-orange-500: #fb923c;
+  --color-orange-400: #fdba74;
+  --color-orange-300: #fed7aa;
+  --color-orange-200: #ffedd5;
+  --color-orange-100: #fff7ed;
+  --color-orange-50:  #ffffff;
+
+  /* Cores de Destaque — Amarelo */
+  --color-yellow-500: #f59e0b;
+  --color-yellow-400: #fbbf24;
+  --color-yellow-300: #fde047;
+  --color-yellow-brand: #ffbe0e;
 
   /* Paleta Neutra — Creme / Warm */
   --color-cream-50:  #fff7ed;
@@ -149,5 +155,5 @@ body {
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9a3412;
+  background: #f97316;
 }

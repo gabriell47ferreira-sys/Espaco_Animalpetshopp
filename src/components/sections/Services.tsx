@@ -50,7 +50,7 @@ export default function Services() {
           </div>
 
           {/* Título */}
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#7c2d12] mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-black mb-4">
             Serviços em breve
           </h2>
 
@@ -100,7 +100,7 @@ export default function Services() {
         <span className="inline-block bg-[#ffedd5] text-[#ea580c] text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
           Serviços
         </span>
-        <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#7c2d12] mb-4">
+        <h2 className="font-display text-3xl sm:text-4xl font-bold text-black mb-4">
           Cuidado completo para o seu pet
         </h2>
         <p className="text-[#6b7280] text-lg max-w-xl mx-auto">

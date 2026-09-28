@@ -29,10 +29,10 @@ export default function Location() {
         <span className="inline-block bg-[#ffedd5] text-[#ea580c] text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
           Onde estamos
         </span>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#7c2d12] mb-4 leading-tight">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 leading-tight">
           Estamos em Caruaru
         </h2>
-        <p className="text-[#6b7280] text-lg max-w-xl mx-auto">
+        <p className="text-[#4b5563] text-lg max-w-xl mx-auto">
           No bairro Kennedy, fácil de chegar. Perto para quem é de Caruaru.
         </p>
       </motion.div>
@@ -47,8 +47,8 @@ export default function Location() {
                 <MapPin size={20} className="text-[#ea580c]" />
               </div>
               <div>
-                <p className="font-bold text-[#7c2d12] mb-0.5">Endereço</p>
-                <p className="text-[#6b7280] text-sm leading-relaxed">
+                <p className="font-bold text-black mb-0.5">Endereço</p>
+                <p className="text-[#4b5563] text-sm leading-relaxed">
                   {business.address}
                   <br />
                   {business.neighborhood} — {business.city}/{business.state}
@@ -86,7 +86,7 @@ export default function Location() {
               <div className="w-10 h-10 bg-[#ffedd5] rounded-xl flex items-center justify-center shrink-0">
                 <Clock size={20} className="text-[#ea580c]" />
               </div>
-              <p className="font-bold text-[#7c2d12]">Horário de funcionamento</p>
+              <p className="font-bold text-black">Horário de funcionamento</p>
             </div>
 
             <div className="space-y-2">

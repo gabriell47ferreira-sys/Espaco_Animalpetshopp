@@ -47,10 +47,10 @@ export default function InstagramSection() {
           <InstagramIcon size={14} />
           Instagram Oficial
         </span>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#7c2d12] leading-tight mb-3">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-black leading-tight mb-3">
           Acompanhe a Espaço Animal
         </h2>
-        <p className="text-[#6b7280] text-base sm:text-lg">
+        <p className="text-[#4b5563] text-base sm:text-lg">
           Veja nossas novidades, rotina da loja e conteúdos exclusivos diretamente no nosso feed.
         </p>
       </motion.div>

@@ -44,10 +44,10 @@ export default function About() {
         <span className="inline-block bg-[#ffedd5] text-[#ea580c] text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
           Por que Espaço Animal?
         </span>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#7c2d12] mb-4 leading-tight">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 leading-tight">
           Um pet shop que você pode confiar.
         </h2>
-        <p className="text-[#6b7280] text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-[#4b5563] text-lg max-w-2xl mx-auto leading-relaxed">
           Em Caruaru, a Espaço Animal é reconhecida pelo atendimento próximo,
           pelos produtos de qualidade e por tratar cada cliente — de dois ou
           quatro patas — com cuidado real.
@@ -67,7 +67,7 @@ export default function About() {
             >
               {pillar.icon}
             </div>
-            <h3 className="font-bold text-[#7c2d12] text-lg mb-2 leading-snug">
+            <h3 className="font-bold text-black text-lg mb-2 leading-snug">
               {pillar.title}
             </h3>
             <p className="text-[#6b7280] text-sm leading-relaxed">

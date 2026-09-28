@@ -16,7 +16,7 @@ const bgClasses: Record<string, string> = {
   white: "bg-white",
   cream: "bg-[#fff7ed]",
   warm:  "bg-[#fff7ed]",
-  green: "bg-[#7c2d12]",
+  green: "bg-[#0c1017]",
   dark:  "bg-[#111827]",
 };
 

@@ -33,8 +33,8 @@ export default function Header() {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-md"
-            : "bg-transparent"
+            ? "bg-white/95 backdrop-blur-md shadow-md border-b border-[#e5e7eb]"
+            : "bg-gradient-to-b from-black/60 via-black/25 to-transparent pb-2"
         }`}
         initial={{ y: -80 }}
         animate={{ y: 0 }}
@@ -52,15 +52,15 @@ export default function Header() {
               <img
                 src="/logo.png"
                 alt="Espaço Animal Pet Shop — Logo"
-                className="w-10 h-10 rounded-xl object-cover shrink-0 group-hover:scale-105 transition-transform duration-200"
+                className="w-10 h-10 rounded-xl object-cover shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-sm"
                 width={40}
                 height={40}
               />
               <div className="hidden sm:block">
-                <p className={`font-bold text-base leading-tight transition-colors ${scrolled ? "text-[#7c2d12]" : "text-white"}`}>
+                <p className={`font-bold text-base leading-tight transition-colors ${scrolled ? "text-black" : "text-white drop-shadow-sm"}`}>
                   Espaço Animal
                 </p>
-                <p className={`text-xs leading-tight transition-colors ${scrolled ? "text-[#fb923c]" : "text-[#fed7aa]"}`}>
+                <p className={`text-xs leading-tight transition-colors ${scrolled ? "text-[#fb923c]" : "text-[#fde047] font-medium drop-shadow-sm"}`}>
                   Pet Shop &amp; Cia
                 </p>
               </div>
@@ -73,7 +73,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   className={`text-sm font-medium transition-colors hover:text-[#fb923c] ${
-                    scrolled ? "text-[#374151]" : "text-white/90"
+                    scrolled ? "text-[#374151]" : "text-white/95 drop-shadow-sm hover:text-[#fde047]"
                   }`}
                 >
                   {link.label}
@@ -86,7 +86,7 @@ export default function Header() {
               <a
                 href={`tel:+${business.phoneRaw}`}
                 className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-[#fb923c] ${
-                  scrolled ? "text-[#374151]" : "text-white/80"
+                  scrolled ? "text-[#374151]" : "text-white/90 drop-shadow-sm hover:text-[#fde047]"
                 }`}
                 aria-label={`Ligar para ${business.phone}`}
               >
@@ -98,6 +98,11 @@ export default function Header() {
                 target="_blank"
                 size="sm"
                 variant={scrolled ? "primary" : "outline"}
+                className={
+                  !scrolled
+                    ? "bg-black/45 hover:bg-black/65 text-white border-white/30 backdrop-blur-md shadow-md hover:border-white/50"
+                    : undefined
+                }
               >
                 WhatsApp
               </Button>
@@ -106,10 +111,10 @@ export default function Header() {
             {/* Hamburger — Mobile */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`lg:hidden p-2 rounded-lg transition-colors ${
+              className={`lg:hidden p-2 rounded-xl transition-colors ${
                 scrolled
-                  ? "text-[#7c2d12] hover:bg-[#ffedd5]"
-                  : "text-white hover:bg-white/10"
+                  ? "text-black hover:bg-[#ffedd5]"
+                  : "text-white bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/20 shadow-sm"
               }`}
               aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}
@@ -147,11 +152,11 @@ export default function Header() {
               <div className="flex items-center justify-between px-5 h-16 border-b border-[#e5e7eb]">
                 <div className="flex items-center gap-2">
                   <img src="/logo.png" alt="Logo" className="w-8 h-8 rounded-lg object-cover" width={32} height={32} />
-                  <span className="font-bold text-[#7c2d12] text-sm">Espaço Animal</span>
+                  <span className="font-bold text-black text-sm">Espaço Animal</span>
                 </div>
                 <button
                   onClick={closeMenu}
-                  className="p-2 rounded-lg hover:bg-[#ffedd5] text-[#7c2d12] transition-colors"
+                  className="p-2 rounded-lg hover:bg-[#ffedd5] text-black transition-colors"
                   aria-label="Fechar menu"
                 >
                   <X size={20} />
@@ -165,7 +170,7 @@ export default function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={closeMenu}
-                    className="px-4 py-3 rounded-xl text-[#374151] font-medium hover:bg-[#ffedd5] hover:text-[#7c2d12] transition-colors"
+                    className="px-4 py-3 rounded-xl text-[#374151] font-medium hover:bg-[#ffedd5] hover:text-[#ea580c] transition-colors"
                   >
                     {link.label}
                   </a>

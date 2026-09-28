@@ -69,12 +69,12 @@ export default function Categories() {
         <span className="inline-block bg-[#ffedd5] text-[#ea580c] text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
           O que você encontra aqui
         </span>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#7c2d12] mb-4 leading-tight">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 leading-tight">
           Tudo para o seu pet
           <br className="hidden sm:block" />
           em um só lugar.
         </h2>
-        <p className="text-[#6b7280] text-lg max-w-xl mx-auto">
+        <p className="text-[#4b5563] text-lg max-w-xl mx-auto">
           Consulte a disponibilidade de produtos e condições pelo WhatsApp.
           Estamos sempre prontos para te atender.
         </p>
@@ -96,7 +96,7 @@ export default function Categories() {
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#7c2d12]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
 
             {/* Conteúdo */}
@@ -104,7 +104,7 @@ export default function Categories() {
               <div className="w-12 h-12 bg-[#ffedd5] rounded-xl flex items-center justify-center mb-3 -mt-8 relative z-10 shadow-sm">
                 {cat.icon}
               </div>
-              <h3 className="font-bold text-[#7c2d12] text-lg mb-1.5">
+              <h3 className="font-bold text-black text-lg mb-1.5">
                 {cat.title}
               </h3>
               <p className="text-[#6b7280] text-sm leading-relaxed">
